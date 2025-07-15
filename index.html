@@ -9,61 +9,92 @@
   <link rel="stylesheet" href="css/resume_layout.css" />
 </head>
 <body class="dark">
-  <div id="resume-wrapper">
-    <button id="theme-toggle" aria-label="Toggle Theme">Light/Dark Toggle</button>
+  <div id="page-wrapper">
 
-    <!-- Header and Summary -->
-    <header id="resume-header">
-      <h1 id="name">Markam Doe</h1>
-      <p id="title">Junior DevOps Engineer</p>
-    </header>
+    <!-- Theme Toggle -->
+    <div id="toggle-wrapper">
+      <button id="theme-toggle" aria-label="Toggle Theme">Light/Dark Toggle</button>
+    </div>
 
-    <section id="summary">
-      <p id="summary-text">
-        <!-- Summary content will be injected here -->
-      </p>
-    </section>
+    <!-- Resume Container -->
+    <main id="resume-wrapper">
+      <!-- Header and Summary -->
+      <header id="resume-header">
+        <h1 id="name">Markam Doe</h1>
+        <p id="title">Junior DevOps Engineer</p>
+      </header>
 
-    <!-- Resume Body: Two Columns + Experience -->
-    <div id="resume-body">
-      <div id="resume-columns">
+      <section id="summary">
+        <p id="summary-text">
+          <!-- Summary content will be injected here -->
+        </p>
+      </section>
 
-        <!-- Left Column: Skills -->
-        <div id="left-column">
-          <section id="skills">
-            <h2>Skills</h2>
-            <!-- Dynamic skill groups will be injected here -->
-          </section>
+      <!-- Resume Two-Column Section -->
+      <div id="resume-body">
+        <div id="resume-columns">
+          <!-- Left Column: Skills -->
+          <div id="left-column">
+            <section id="skills">
+              <h2>Skills</h2>
+              <div id="skill-groups">
+                <!-- JS injects:
+                <div class="skill-group">
+                  <h3>Programming</h3>
+                  <ul><li>Python</li><li>JavaScript</li></ul>
+                </div>
+                -->
+              </div>
+            </section>
+          </div>
+
+          <!-- Right Column: Certifications + Education -->
+          <div id="right-column">
+            <section id="certifications">
+              <h2>Certifications</h2>
+              <ul id="cert-list">
+                <!-- Certification list items will be injected -->
+              </ul>
+            </section>
+
+            <section id="education">
+              <h2>Education</h2>
+              <div id="edu-list">
+                <!-- Education entries will be injected -->
+              </div>
+            </section>
+          </div>
         </div>
 
-        <!-- Right Column: Certifications + Education -->
-        <div id="right-column">
-          <section id="certifications">
-            <h2>Certifications</h2>
-            <ul id="cert-list">
-              <!-- Certification list items will be injected -->
-            </ul>
-          </section>
-
-          <section id="education">
-            <h2>Education</h2>
-            <div id="edu-list">
-              <!-- Education entries will be injected -->
+        <!-- Full-width Experience Section -->
+        <section id="resume-fullwidth">
+          <section id="experience">
+            <h2>Experience</h2>
+            <div id="experience-list">
+              <!-- JS injects:
+              <div class="job">
+                <h3>DevOps Engineer - Company</h3>
+                <div class="job-details">
+                  <span class="job-date">2022 – Present</span>
+                  <span class="job-location">Remote</span>
+                </div>
+                <ul class="responsibilities">
+                  <li>Configured Docker-based deployment pipelines</li>
+                  <li>Set up Prometheus + Grafana dashboards</li>
+                </ul>
+              </div>
+              -->
             </div>
           </section>
-        </div>
-      </div>
-
-      <!-- Full-width Section: Experience -->
-      <div id="resume-fullwidth">
-        <section id="experience">
-          <h2>Experience</h2>
-          <div id="experience-list">
-            <!-- Experience items will be injected -->
-          </div>
         </section>
       </div>
+    </main>
+
+    <!-- Download Button Area -->
+    <div id="download-wrapper">
+      <button id="download-pdf">Download PDF</button>
     </div>
+
   </div>
 
   <script src="js/toggle.js"></script>
