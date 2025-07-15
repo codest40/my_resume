@@ -1177,3 +1177,8 @@ BrokenPipeError: [Errno 32] Broken pipe
 127.0.0.1 - - [15/Jul/2025 21:04:42] "GET /json/resume_data.json HTTP/1.1" 200 -
 127.0.0.1 - - [15/Jul/2025 21:04:42] code 404, message File not found
 127.0.0.1 - - [15/Jul/2025 21:04:42] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [15/Jul/2025 21:52:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jul/2025 21:52:30] "GET /css/resume_layout.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Jul/2025 21:52:30] "GET /js/fetch.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Jul/2025 21:52:30] "GET /js/pdf.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Jul/2025 21:52:30] "GET /json/resume_data.json HTTP/1.1" 200 -
