@@ -31,17 +31,8 @@ function renderSummary(data) {
 
 function renderSkills(skills) {
   const container = document.getElementById("skills");
-
-  // Clear and re-add heading
-  container.innerHTML = "";
-
-  const heading = document.createElement("h2");
-  heading.textContent = "Skills";
-  container.appendChild(heading);
-
-  const groupsWrapper = document.createElement("div");
-  groupsWrapper.classList.add("skill-groups");
-
+  container.innerHTML = `<h2>Skills</h2>`;
+  
   skills.forEach(group => {
     const groupEl = document.createElement("div");
     groupEl.classList.add("skill-group");
@@ -58,16 +49,14 @@ function renderSkills(skills) {
     });
 
     groupEl.appendChild(ul);
-    groupsWrapper.appendChild(groupEl);
+    container.appendChild(groupEl);
   });
-
-  container.appendChild(groupsWrapper);
 }
 
 function renderCertifications(certs) {
   const container = document.getElementById("certifications");
   container.innerHTML = `<h2>Certifications</h2>`;
-
+  
   const ul = document.createElement("ul");
   certs.forEach(cert => {
     const li = document.createElement("li");
@@ -81,11 +70,11 @@ function renderCertifications(certs) {
 function renderEducation(education) {
   const container = document.getElementById("education");
   container.innerHTML = `<h2>Education</h2>`;
-
+  
   education.forEach(edu => {
     const degree = document.createElement("p");
     degree.innerHTML = `<strong>${edu.degree}</strong>`;
-
+    
     const school = document.createElement("p");
     school.textContent = `${edu.institution}, ${edu.year}`;
 
@@ -118,4 +107,3 @@ function renderExperience(experience) {
     container.appendChild(jobDiv);
   });
 }
-
