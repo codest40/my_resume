@@ -1,63 +1,86 @@
 {
-  "name": "Markam Doe",
+  "name": "Markam DevOps",
   "title": "Junior DevOps Engineer",
-  "summary": "Detail-oriented DevOps engineer with a passion for infrastructure automation, containerization, and building resilient systems. Currently learning Docker and building real-world projects for fintech use.",
+
+  "contact_links": [
+    {
+      "type": "email",
+      "label": "markam@example.com",
+      "href": "mailto:markam@example.com"
+    },
+    {
+      "type": "github",
+      "label": "GitHub",
+      "href": "https://github.com/markam"
+    },
+    {
+      "type": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://linkedin.com/in/markam"
+    }
+  ],
+  "contact_meta": {
+    "mobile": "+234707070505",
+    "location": "London"
+  },
+
+  "summary": "Motivated DevOps engineer with a passion for reliability, automation, and clean delivery pipelines. Focused on building secure, scalable systems and learning deeply step by step.",
 
   "skills": [
     {
-      "group": "Core Skills",
-      "items": [
-        "Linux Systems & Bash Scripting",
-        "Python Automation",
-        "CI/CD with GitHub Actions"
-      ]
+      "category": "Languages",
+      "items": ["Python", "Bash", "YAML"]
     },
     {
-      "group": "Containers & Infra",
-      "items": [
-        "Docker & Docker Compose",
-        "Terraform & IaC"
-      ]
+      "category": "Tools",
+      "items": ["Docker", "Git", "Terraform"]
     },
     {
-      "group": "Monitoring",
-      "items": [
-        "Grafana & Prometheus"
-      ]
-    }
-  ],
-
-  "certifications": [
-    "Linux Foundation Certified (LFCS)",
-    "AWS Certified Cloud Practitioner",
-    "Docker Essentials by IBM"
-  ],
-
-  "education": [
-    {
-      "degree": "BSc Computer Science",
-      "institution": "ABC University",
-      "year": "2020"
+      "category": "Cloud",
+      "items": ["AWS", "Render", "Cloudflare"]
     }
   ],
 
   "experience": [
     {
-      "title": "DevOps Intern – FintechLab",
-      "period": "Jan 2025 – Present",
+      "role": "DevOps Intern @ TechCorp",
+      "duration": "Jan 2025 – Present",
+      "location": "Remote",
       "responsibilities": [
-        "Built a secure Flask backend with Docker and Nginx reverse proxy.",
-        "Integrated CI/CD pipelines with GitHub Actions and Fly.io deployments.",
-        "Monitored internal APIs with Prometheus and visualized metrics in Grafana."
+        "Automated deployment pipelines with GitHub Actions",
+        "Dockerized multi-service apps with Flask and Postgres",
+        "Monitored uptime using Prometheus + Grafana"
       ]
     },
     {
-      "title": "Open Source Contributor – Resume Builder",
-      "period": "Sep 2024 – Dec 2024",
+      "role": "Freelance DevOps Projects",
+      "duration": "2024 – 2025",
+      "location": "Remote",
       "responsibilities": [
-        "Implemented admin dashboard for dynamic resume rendering with Flask.",
-        "Managed full-stack integration of resume data with JWT-based auth."
+        "Built CI/CD workflows using Ansible and Terraform",
+        "Configured HTTPS via Cloudflare DNS for Flask apps",
+        "Secured containers using best practices (minimal base, no root)"
       ]
     }
+  ],
+
+  "education": [
+    {
+      "degree": "BSc Computer Science",
+      "institution": "University of DevTown",
+      "year": "2021–2024"
+    },
+    {
+      "degree": "Linux Foundation Bootcamp",
+      "institution": "",
+      "year": "Completed 2024"
+    }
+  ],
+
+  "certifications": [
+    "Docker Essentials – IBM SkillsBuild",
+    "AWS Cloud Practitioner – Amazon",
+    "Prometheus + Grafana Monitoring – Udemy"
   ]
 }
+

@@ -1,121 +1,99 @@
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const res = await fetch("json/resume_data.json");
-    const data = await res.json();
+    const response = await fetch('json/resume_data.json');
+    const data = await response.json();
+    console.log("Fetched resume data:", data);
+
+    if (!data || typeof data !== 'object') throw new Error("Invalid JSON structure");
 
     renderHeader(data);
-    renderSummary(data);
+    renderSummary(data.summary);
     renderSkills(data.skills);
-    renderCertifications(data.certifications);
-    renderEducation(data.education);
     renderExperience(data.experience);
-  } catch (error) {
-    console.error("Failed to load resume data:", error);
+    renderEducation(data.education);
+    renderCertifications(data.certifications);
+  } catch (err) {
+    console.error("Failed to load resume data:", err);
   }
 });
 
-// ---- RENDER FUNCTIONS ----
+// ========== Render Functions ==========
 
 function renderHeader(data) {
-  const header = document.getElementById("resume-header");
-  header.innerHTML = `
-    <h1>${data.name}</h1>
-    <p>${data.title}</p>
-  `;
+  const nameEl = document.getElementById('name');
+  const titleEl = document.getElementById('title');
+  const contactLinks = document.getElementById('contact-links');
+  const contactMeta = document.getElementById('contact-meta');
+
+  if (nameEl) nameEl.textContent = data.name || '';
+  if (titleEl) titleEl.textContent = data.title || '';
+
+  if (contactLinks && Array.isArray(data.contact_links)) {
+    contactLinks.innerHTML = data.contact_links.map(link => `
+      <a href="${link.href}" target="_blank">${link.label}</a>
+    `).join(' | ');
+  }
+
+  if (contactMeta && data.contact_meta) {
+    contactMeta.innerHTML = `
+      <p>Mobile: ${data.contact_meta.mobile || ''} 
+      <span>Location: ${data.contact_meta.location || ''}</span></p>`;
+  }
 }
 
-function renderSummary(data) {
-  const summary = document.getElementById("summary");
-  summary.innerHTML = `<p>${data.summary}</p>`;
+function renderSummary(summary) {
+  const el = document.getElementById('summary-text');
+  if (el) el.textContent = summary || '';
 }
 
 function renderSkills(skills) {
-  const container = document.getElementById("skills");
+  const container = document.getElementById('skills-container');
+  if (!container || !Array.isArray(skills)) return;
 
-  // Clear and re-add heading
-  container.innerHTML = "";
-
-  const heading = document.createElement("h2");
-  heading.textContent = "Skills";
-  container.appendChild(heading);
-
-  const groupsWrapper = document.createElement("div");
-  groupsWrapper.classList.add("skill-groups");
-
-  skills.forEach(group => {
-    const groupEl = document.createElement("div");
-    groupEl.classList.add("skill-group");
-
-    const title = document.createElement("h3");
-    title.textContent = group.group;
-    groupEl.appendChild(title);
-
-    const ul = document.createElement("ul");
-    group.items.forEach(skill => {
-      const li = document.createElement("li");
-      li.textContent = skill;
-      ul.appendChild(li);
-    });
-
-    groupEl.appendChild(ul);
-    groupsWrapper.appendChild(groupEl);
-  });
-
-  container.appendChild(groupsWrapper);
+  container.innerHTML = skills.map(skill => `
+    <div class="skill-block">
+      <h3>${skill.category}</h3>
+      <ul>
+        ${(skill.items || []).map(item => `<li>${item}</li>`).join('')}
+      </ul>
+    </div>
+  `).join('');
 }
 
-function renderCertifications(certs) {
-  const container = document.getElementById("certifications");
-  container.innerHTML = `<h2>Certifications</h2>`;
+function renderExperience(experiences) {
+  const container = document.getElementById('experience-container');
+  if (!container || !Array.isArray(experiences)) return;
 
-  const ul = document.createElement("ul");
-  certs.forEach(cert => {
-    const li = document.createElement("li");
-    li.textContent = cert;
-    ul.appendChild(li);
-  });
-
-  container.appendChild(ul);
+  container.innerHTML = experiences.map(job => `
+    <div class="job-block">
+      <h3>${job.role}</h3>
+      <div class="job-details">${job.duration} | ${job.location}</div>
+      <ul class="responsibilities">
+        ${(job.responsibilities || []).map(item => `<li>${item}</li>`).join('')}
+      </ul>
+    </div>
+  `).join('');
 }
 
 function renderEducation(education) {
-  const container = document.getElementById("education");
-  container.innerHTML = `<h2>Education</h2>`;
+  const list = document.getElementById('education-list');
+  if (!list || !Array.isArray(education)) return;
 
-  education.forEach(edu => {
-    const degree = document.createElement("p");
-    degree.innerHTML = `<strong>${edu.degree}</strong>`;
-
-    const school = document.createElement("p");
-    school.textContent = `${edu.institution}, ${edu.year}`;
-
-    container.appendChild(degree);
-    container.appendChild(school);
-  });
+  list.innerHTML = education.map(item => `
+    <li>
+      <strong>${item.degree}</strong><br />
+      ${item.institution ? `${item.institution}, ` : ''}${item.year}
+    </li>
+  `).join('');
 }
 
-function renderExperience(experience) {
-  const container = document.getElementById("experience");
-  container.innerHTML = `<h2>Experience</h2>`;
+function renderCertifications(certifications) {
+  const list = document.getElementById('certification-list');
+  if (!list || !Array.isArray(certifications)) {
+    console.warn("Missing or invalid certifications data.");
+    return;
+  }
 
-  experience.forEach(job => {
-    const jobDiv = document.createElement("div");
-    jobDiv.classList.add("job");
-
-    jobDiv.innerHTML = `
-      <h3>${job.title}</h3>
-      <p><em>${job.period}</em></p>
-    `;
-
-    const ul = document.createElement("ul");
-    job.responsibilities.forEach(task => {
-      const li = document.createElement("li");
-      li.textContent = task;
-      ul.appendChild(li);
-    });
-
-    jobDiv.appendChild(ul);
-    container.appendChild(jobDiv);
-  });
+  list.innerHTML = certifications.map(cert => `<li>${cert}</li>`).join('');
 }
 

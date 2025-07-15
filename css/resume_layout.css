@@ -1,194 +1,209 @@
-/* resume_layout.css */
-/* Compact, single-page layout optimized for PDF capture */
-
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  font-size: 13px;
-  line-height: 1.4;
-}
-
+/* === BASE LAYOUT === */
 #page-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Resume container */
-#resume-container {
-  max-width: 800px;
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background-color: var(--background);
-  box-shadow: var(--box-shadow, 0 1px 3px rgba(0, 0, 0, 0.05));
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-
-/* Header and summary */
-#resume-header,
-#summary {
-  text-align: center;
-  margin: 0;
-}
-
-#summary-text {
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
-  font-size: 0.9rem;
+  padding: 1rem;
+  font-family: sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
-/* Columns: Skills (left) + Certs/Education (right) */
-#resume-columns {
+/* === TOP CONTROLS === */
+#resume-controls {
   display: flex;
-  flex-direction: row;
-  gap: 0.75rem;
-  flex-wrap: nowrap;
-}
-
-#left-column {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-#right-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-/* Skill groups — now tighter, flowing horizontally */
-#skill-groups {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.5rem;
-  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
 }
 
-.skill-group {
-  flex: 1 1 180px;
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 0.25rem;
-  box-shadow: var(--box-shadow, 0 1px 2px rgba(0, 0, 0, 0.05));
-}
-
-.skill-group h3 {
-  margin-bottom: 0.3rem;
-  font-size: 0.95rem;
-}
-
-.skill-group ul {
-  padding-left: 1rem;
-  margin: 0;
-  font-size: 0.8rem;
-}
-
-/* Certifications + Education */
-#cert-list,
-#edu-list {
-  padding-left: 1rem;
-  margin: 0;
-  font-size: 0.85rem;
-}
-
-/* Experience section (full width) */
-#resume-fullwidth {
-  width: 100%;
-}
-
-#experience {
-  width: 100%;
-}
-
-#experience-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-/* Job cards – now share row when room allows */
-.job {
-  flex: 1 1 380px;
-  border: 1px solid var(--border-color);
-  background-color: var(--card-bg);
-  border-radius: 6px;
-  padding: 0.75rem;
-  box-shadow: var(--box-shadow, 0 1px 2px rgba(0, 0, 0, 0.05));
-}
-
-.job h3 {
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
-}
-
-.job-details {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: var(--text-secondary, #888);
-  margin-bottom: 0.25rem;
-}
-
-.job .responsibilities {
-  list-style: disc;
-  padding-left: 1rem;
-  margin: 0.25rem 0 0;
-  font-size: 0.8rem;
-}
-
-/* Download button (hidden for print/pdf) */
-#download-wrapper {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-#download-pdf {
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  border-radius: 4px;
+#resume-controls button {
+  padding: 0.4rem 0.8rem;
   border: none;
+  border-radius: 4px;
   background-color: var(--accent-color);
-  color: var(--background);
+  color: white;
+  font-size: 0.85rem;
   cursor: pointer;
 }
 
-@media print {
-  #download-wrapper {
-    display: none !important;
-  }
-
-  .skill-group,
-  .job {
-    page-break-inside: avoid;
-  }
+#resume-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  margin-top: 1rem;
 }
 
-/* Responsive tweaks */
+
+/* === HEADER === */
+#resume-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+#resume-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--heading);
+}
+
+#resume-header h2 {
+  font-size: 1.2rem;
+  margin: 0.2rem 0 0.5rem 0;
+  color: var(--subheading);
+}
+
+#contact-links {
+  font-size: 0.9rem;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+#contact-links a {
+  color: var(--link-color);
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+/* === SUMMARY === */
+#summary {
+  margin-bottom: 1.2rem;
+}
+
+#summary-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* === FLEX GRID GENERAL === */
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* === SKILLS === */
+#skills {
+  margin-bottom: 1.5rem;
+}
+
+#skills h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--heading);
+}
+
+.skill-block {
+  flex: 1;
+  min-width: 200px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.skill-block h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  color: var(--accent-color);
+}
+
+.skill-block ul {
+  margin: 0;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+
+/* === EXPERIENCE === */
+#experience {
+  margin-bottom: 1.5rem;
+}
+
+#experience h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--heading);
+}
+
+.job-block {
+  flex: 1;
+  min-width: 280px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.job-block h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  color: var(--accent-color);
+}
+
+.job-details {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  opacity: 0.75;
+}
+
+.responsibilities {
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+/* === EDUCATION + CERTIFICATIONS === */
+#edu-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.edu-block,
+.cert-block {
+  flex: 1;
+  min-width: 250px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.edu-block h2,
+.cert-block h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: var(--heading);
+}
+
+.edu-block ul,
+.cert-block ul {
+  font-size: 0.9rem;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
-  #resume-columns {
+  #resume-header {
     flex-direction: column;
+    align-items: flex-start;
   }
 
-  .job {
-    flex: 1 1 100%;
+  #contact-links {
+    text-align: left;
+    margin-top: 0.5rem;
   }
 
-  #skill-groups {
+  .flex-grid,
+  #edu-certs {
     flex-direction: column;
   }
 }

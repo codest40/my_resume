@@ -2,104 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Resume</title>
-  <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/resume_theme.css" />
-  <link rel="stylesheet" href="css/resume_layout.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume</title>
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/css/resume_layout.css" />
+  <link rel="stylesheet" href="/css/resume_ui.css" />
 </head>
 <body class="dark">
   <div id="page-wrapper">
 
-    <!-- Theme Toggle -->
-    <div id="toggle-wrapper">
-      <button id="theme-toggle" aria-label="Toggle Theme">Light/Dark Toggle</button>
-    </div>
-
-    <!-- Resume Container -->
-    <main id="resume-wrapper">
-      <!-- Header and Summary -->
-      <header id="resume-header">
-        <h1 id="name">Markam Doe</h1>
-        <p id="title">Junior DevOps Engineer</p>
-      </header>
-
-      <section id="summary">
-        <p id="summary-text">
-          <!-- Summary content will be injected here -->
-        </p>
-      </section>
-
-      <!-- Resume Two-Column Section -->
-      <div id="resume-body">
-        <div id="resume-columns">
-          <!-- Left Column: Skills -->
-          <div id="left-column">
-            <section id="skills">
-              <h2>Skills</h2>
-              <div id="skill-groups">
-                <!-- JS injects:
-                <div class="skill-group">
-                  <h3>Programming</h3>
-                  <ul><li>Python</li><li>JavaScript</li></ul>
-                </div>
-                -->
-              </div>
-            </section>
-          </div>
-
-          <!-- Right Column: Certifications + Education -->
-          <div id="right-column">
-            <section id="certifications">
-              <h2>Certifications</h2>
-              <ul id="cert-list">
-                <!-- Certification list items will be injected -->
-              </ul>
-            </section>
-
-            <section id="education">
-              <h2>Education</h2>
-              <div id="edu-list">
-                <!-- Education entries will be injected -->
-              </div>
-            </section>
-          </div>
-        </div>
-
-        <!-- Full-width Experience Section -->
-        <section id="resume-fullwidth">
-          <section id="experience">
-            <h2>Experience</h2>
-            <div id="experience-list">
-              <!-- JS injects:
-              <div class="job">
-                <h3>DevOps Engineer - Company</h3>
-                <div class="job-details">
-                  <span class="job-date">2022 – Present</span>
-                  <span class="job-location">Remote</span>
-                </div>
-                <ul class="responsibilities">
-                  <li>Configured Docker-based deployment pipelines</li>
-                  <li>Set up Prometheus + Grafana dashboards</li>
-                </ul>
-              </div>
-              -->
-            </div>
-          </section>
-        </section>
-      </div>
-    </main>
-
-    <!-- Download Button Area -->
-    <div id="download-wrapper">
+    <!-- Utility Row -->
+    <div id="resume-controls">
+      <button id="theme-toggle">Toggle Theme</button>
       <button id="download-pdf">Download PDF</button>
     </div>
 
-  </div>
-  <script src="js/toggle.js"></script>
-  <script src="js/fetch.js"></script>
-  <script src="js/pdf.js"></script>
+    <!-- Resume Main Container -->
+    <div id="resume-container">
+
+      <!-- Header Section -->
+      <header id="resume-header">
+        <div class="name-title">
+          <h1 id="name"></h1>
+          <h2 id="title"></h2>
+        </div>
+        <div>
+          <div id="contact-links"></div>
+          <div id="contact-meta"></div>
+        </div>
+      </header>
+
+      <!-- Summary -->
+      <section id="summary">
+        <p id="summary-text"></p>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <div id="skills-container" class="flex-grid"></div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <h2>Experience</h2>
+        <div id="experience-container" class="flex-grid"></div>
+      </section>
+
+      <!-- Education + Certifications -->
+      <section id="edu-certs">
+        <div id="education-block" class="edu-block">
+          <h2>Education</h2>
+          <ul id="education-list"></ul>
+        </div>
+        <div id="certification-block" class="cert-block">
+          <h2>Certifications</h2>
+          <ul id="certification-list"></ul>
+        </div>
+      </section>
+
+    </div> <!-- End Resume Container -->
+
+  </div> <!-- End Page Wrapper -->
+
+  <script src="/js/toggle.js"></script>
+  <script src="/js/fetch.js"></script> 
+  <script src="/js/pdf.js"></script>
 </body>
 </html>
 
