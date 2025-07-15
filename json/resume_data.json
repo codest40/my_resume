@@ -1,0 +1,63 @@
+{
+  "name": "Markam Doe",
+  "title": "Junior DevOps Engineer",
+  "summary": "Detail-oriented DevOps engineer with a passion for infrastructure automation, containerization, and building resilient systems. Currently learning Docker and building real-world projects for fintech use.",
+
+  "skills": [
+    {
+      "group": "Core Skills",
+      "items": [
+        "Linux Systems & Bash Scripting",
+        "Python Automation",
+        "CI/CD with GitHub Actions"
+      ]
+    },
+    {
+      "group": "Containers & Infra",
+      "items": [
+        "Docker & Docker Compose",
+        "Terraform & IaC"
+      ]
+    },
+    {
+      "group": "Monitoring",
+      "items": [
+        "Grafana & Prometheus"
+      ]
+    }
+  ],
+
+  "certifications": [
+    "Linux Foundation Certified (LFCS)",
+    "AWS Certified Cloud Practitioner",
+    "Docker Essentials by IBM"
+  ],
+
+  "education": [
+    {
+      "degree": "BSc Computer Science",
+      "institution": "ABC University",
+      "year": "2020"
+    }
+  ],
+
+  "experience": [
+    {
+      "title": "DevOps Intern – FintechLab",
+      "period": "Jan 2025 – Present",
+      "responsibilities": [
+        "Built a secure Flask backend with Docker and Nginx reverse proxy.",
+        "Integrated CI/CD pipelines with GitHub Actions and Fly.io deployments.",
+        "Monitored internal APIs with Prometheus and visualized metrics in Grafana."
+      ]
+    },
+    {
+      "title": "Open Source Contributor – Resume Builder",
+      "period": "Sep 2024 – Dec 2024",
+      "responsibilities": [
+        "Implemented admin dashboard for dynamic resume rendering with Flask.",
+        "Managed full-stack integration of resume data with JWT-based auth."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Resume</title>
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/resume_theme.css" />
+  <link rel="stylesheet" href="css/resume_layout.css" />
+</head>
+<body class="dark">
+  <div id="resume-wrapper">
+    <button id="theme-toggle" aria-label="Toggle Theme">Light/Dark Toggle</button>
+
+    <!-- Header and Summary -->
+    <header id="resume-header">
+      <h1 id="name">Markam Doe</h1>
+      <p id="title">Junior DevOps Engineer</p>
+    </header>
+
+    <section id="summary">
+      <p id="summary-text">
+        <!-- Summary content will be injected here -->
+      </p>
+    </section>
+
+    <!-- Resume Body: Two Columns + Experience -->
+    <div id="resume-body">
+      <div id="resume-columns">
+
+        <!-- Left Column: Skills -->
+        <div id="left-column">
+          <section id="skills">
+            <h2>Skills</h2>
+            <!-- Dynamic skill groups will be injected here -->
+          </section>
+        </div>
+
+        <!-- Right Column: Certifications + Education -->
+        <div id="right-column">
+          <section id="certifications">
+            <h2>Certifications</h2>
+            <ul id="cert-list">
+              <!-- Certification list items will be injected -->
+            </ul>
+          </section>
+
+          <section id="education">
+            <h2>Education</h2>
+            <div id="edu-list">
+              <!-- Education entries will be injected -->
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Full-width Section: Experience -->
+      <div id="resume-fullwidth">
+        <section id="experience">
+          <h2>Experience</h2>
+          <div id="experience-list">
+            <!-- Experience items will be injected -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/toggle.js"></script>
+  <script src="js/fetch.js"></script>
+</body>
+</html>
+
