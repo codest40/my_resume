@@ -6,12 +6,12 @@
     {
       "type": "email",
       "label": "markam@example.com",
-      "href": "mailto:markam@example.com"
+      "href": "mailto:rundailytest@gmail.com"
     },
     {
       "type": "github",
       "label": "GitHub",
-      "href": "https://github.com/markam"
+      "href": "https://github.com/codest40"
     },
     {
       "type": "linkedin",
@@ -21,7 +21,7 @@
   ],
   "contact_meta": {
     "mobile": "+234707070505",
-    "location": "London"
+    "location": "Abuja, Nigeria"
   },
 
   "summary": "Motivated DevOps engineer with a passion for reliability, automation, and clean delivery pipelines. Focused on building secure, scalable systems and learning deeply step by step.",
@@ -33,7 +33,7 @@
     },
     {
       "category": "Tools",
-      "items": ["Docker", "Git", "Terraform"]
+      "items": ["Linux", "Docker", "Git", "Terraform", "Ansible"]
     },
     {
       "category": "Cloud",
@@ -79,7 +79,6 @@
 
   "certifications": [
     "Docker Essentials – IBM SkillsBuild",
-    "AWS Cloud Practitioner – Amazon",
     "Prometheus + Grafana Monitoring – Udemy"
   ]
 }
