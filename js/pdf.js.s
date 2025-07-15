@@ -4,8 +4,39 @@ window.addEventListener('DOMContentLoaded', () => {
   if (!downloadBtn) return;
 
   downloadBtn.addEventListener('click', () => {
-    // --- DISABLED DOWNLOAD ---
-    showToast("Download currently disabled.");
+    // --- TEMP DISABLE PDF GENERATION ---
+    showToast("Download currently disabled.");  // 👈 toast message
+    return;
+
+    /*
+    const element = document.getElementById('resume-wrapper');
+
+    const opt = {
+      margin:       [20, 20, 20, 20],
+      filename:     'markam_resume.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  {
+        scale: 2,
+        useCORS: true,
+        scrollX: 0,
+        scrollY: -window.scrollY,
+        windowWidth: document.documentElement.scrollWidth,
+        windowHeight: document.documentElement.scrollHeight,
+      },
+      jsPDF: {
+        unit: 'pt',
+        format: 'a4',
+        orientation: 'portrait',
+      },
+      pagebreak: {
+        mode: ['css', 'legacy'],
+        avoid: ['.job', '.skill-group']
+      }
+    };
+
+    window.scrollTo(0, 0);
+    html2pdf().set(opt).from(element).save();
+    */
   });
 });
 
