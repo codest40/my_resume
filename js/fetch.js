@@ -36,8 +36,8 @@ function renderHeader(data) {
 
   if (contactMeta && data.contact_meta) {
     contactMeta.innerHTML = `
-      <p>Mobile: ${data.contact_meta.mobile || ''} 
-      <span>Location: ${data.contact_meta.location || ''}</span></p>`;
+      <p>Mobile: ${data.contact_meta.mobile || ''}
+      | <span>Location: ${data.contact_meta.location || ''}</span></p>`;
   }
 }
 

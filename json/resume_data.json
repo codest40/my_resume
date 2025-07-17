@@ -5,7 +5,7 @@
   "contact_links": [
     {
       "type": "email",
-      "label": "markam@example.com",
+      "label": "Email",
       "href": "mailto:rundailytest@gmail.com"
     },
     {
@@ -29,7 +29,7 @@
   "skills": [
     {
       "category": "Languages",
-      "items": ["Python", "Bash", "YAML"]
+      "items": ["Python", "Bash", "YAML", "Vanilla Javascript"]
     },
     {
       "category": "Tools",
@@ -44,7 +44,7 @@
   "experience": [
     {
       "role": "DevOps Intern @ TechCorp",
-      "duration": "Jan 2025 – Present",
+      "duration": "2024 – March 2025",
       "location": "Remote",
       "responsibilities": [
         "Automated deployment pipelines with GitHub Actions",
@@ -54,7 +54,7 @@
     },
     {
       "role": "Freelance DevOps Projects",
-      "duration": "2024 – 2025",
+      "duration": "Jan 2025 – Present",
       "location": "Remote",
       "responsibilities": [
         "Built CI/CD workflows using Ansible and Terraform",
@@ -66,15 +66,15 @@
 
   "education": [
     {
-      "degree": "BSc Computer Science",
-      "institution": "University of DevTown",
-      "year": "2021–2024"
-    },
-    {
       "degree": "Linux Foundation Bootcamp",
       "institution": "",
       "year": "Completed 2024"
-    }
+    },
+     {
+    "degree": "DevOps with AWS Specialization",
+    "institution": "Coursera",
+    "year": "Completed 2025"
+   }
   ],
 
   "certifications": [

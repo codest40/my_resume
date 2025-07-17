@@ -18,7 +18,7 @@ function showToast(message, duration = 3000) {
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    background: #333;
+    background: red;
     color: #fff;
     padding: 12px 20px;
     border-radius: 6px;
