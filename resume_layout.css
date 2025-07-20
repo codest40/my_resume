@@ -1,0 +1,196 @@
+/* === Layout Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Page Wrapper === */
+#page-wrapper {
+  max-width: 800px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+/* === Header === */
+#resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.name-title h1 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.name-title h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+/* === Contact Section === */
+#contact-links a {
+  margin-right: 0.5rem;
+  text-decoration: none;
+}
+
+#contact-meta p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* === Summary === */
+#summary {
+  margin-bottom: 1rem;
+}
+
+#summary p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* === Skills Grid === */
+#skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: var(--block-bg);
+}
+
+.skill-block h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.skill-block ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-block li {
+  background-color: var(--tag-bg, #ddd);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.85rem;
+  border-radius: 4px;
+}
+
+/* === Experience Grid (2 or less = side-by-side) === */
+#experience {
+  margin-bottom: 1rem;
+}
+
+#experience-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.75rem;
+}
+
+.job-block {
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  background-color: var(--block-bg);
+  border-radius: 4px;
+}
+
+.job-block h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.job-details {
+  font-size: 0.85rem;
+  color: gray;
+  margin-bottom: 0.3rem;
+}
+
+.responsibilities {
+  list-style: disc inside;
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* === Education + Certifications Grid === */
+#edu-certs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.edu-block h2,
+.cert-block h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+#education-list,
+#certification-list {
+  font-size: 0.9rem;
+  list-style: square inside;
+}
+
+/* === Utility Controls === */
+#resume-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin: 1rem auto 0 auto;
+  max-width: 800px;
+}
+
+#resume-controls button {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+  #page-wrapper {
+    max-width: 90%;
+  }
+
+  #edu-certs {
+    grid-template-columns: 1fr;
+  }
+
+  #resume-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #experience-container {
+    grid-template-columns: 1fr;
+  }
+}

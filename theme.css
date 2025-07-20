@@ -1,0 +1,25 @@
+/* === Light Theme === */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --border-color: #dddddd;
+  --block-bg: #f9f9f9;
+  --link-color: #0a66c2;
+  --button-bg: #eeeeee;
+  --button-text: #111111;
+  --button-hover: #cccccc;
+  --tag-bg: #e0e0e0; 
+}
+
+/* === Dark Theme === */
+body.dark {
+  --bg-color: #121212;
+  --text-color: #eeeeee;
+  --border-color: #333333;
+  --block-bg: #1e1e1e;
+  --link-color: #66b2ff;
+  --button-bg: #222222;
+  --button-text: #ffffff;
+  --button-hover: #444444;
+  --tag-bg: #333333;
+}

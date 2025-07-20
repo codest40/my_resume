@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const response = await fetch('json/resume_data.json');
+    const response = await fetch('resume_data.json');
     const data = await response.json();
     console.log("Fetched resume data:", data);
 
