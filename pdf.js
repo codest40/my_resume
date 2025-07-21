@@ -1,37 +1,23 @@
-window.addEventListener('DOMContentLoaded', () => {
-  const downloadBtn = document.getElementById('download-pdf');
+// pdf.js
 
-  if (!downloadBtn) return;
+document.getElementById("download-pdf").addEventListener("click", function () {
+  const resume = document.getElementById("resume-container");
 
-  downloadBtn.addEventListener('click', () => {
-    // --- DISABLED DOWNLOAD ---
-    showToast("Download currently disabled.");
-  });
+  // Options for formatting
+  const opt = {
+    margin:       0.5,
+    filename:     'Markam_DevOps_Resume.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  {
+      scale: 2,
+      useCORS: true,
+      allowTaint: true,
+      scrollX: 0,
+      scrollY: -window.scrollY
+    },
+    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+  };
+
+  // Use html2pdf
+  html2pdf().set(opt).from(resume).save();
 });
-
-// ===== Simple Toast Function =====
-function showToast(message, duration = 3000) {
-  const toast = document.createElement('div');
-  toast.textContent = message;
-  toast.style.cssText = `
-    position: fixed;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: red;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-size: 14px;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  `;
-  document.body.appendChild(toast);
-  setTimeout(() => (toast.style.opacity = 1), 100); // fade in
-  setTimeout(() => {
-    toast.style.opacity = 0; // fade out
-    setTimeout(() => toast.remove(), 300);
-  }, duration);
-}
-

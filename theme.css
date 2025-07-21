@@ -8,18 +8,18 @@
   --button-bg: #eeeeee;
   --button-text: #111111;
   --button-hover: #cccccc;
-  --tag-bg: #e0e0e0; 
+  --tag-bg: #e0e0e0;
 }
 
-/* === Dark Theme === */
+/* === Lighter Dark Theme for Resume === */
 body.dark {
-  --bg-color: #121212;
-  --text-color: #eeeeee;
-  --border-color: #333333;
-  --block-bg: #1e1e1e;
-  --link-color: #66b2ff;
-  --button-bg: #222222;
+  --bg-color: #1c1c1c;          /* Was #121212 → Lighter */
+  --text-color: #f0f0f0;        /* Was #eeeeee */
+  --border-color: #444444;      /* Was #333333 */
+  --block-bg: #2a2a2a;          /* Was #1e1e1e → Softer slate */
+  --link-color: #82cfff;        /* Slightly brighter blue */
+  --button-bg: #333333;         /* Was #222222 */
   --button-text: #ffffff;
-  --button-hover: #444444;
-  --tag-bg: #333333;
+  --button-hover: #555555;      /* Was #444444 */
+  --tag-bg: #3a3a3a;            /* Was #333333 → Balanced slate */
 }

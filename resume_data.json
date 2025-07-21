@@ -16,11 +16,17 @@
     {
       "type": "linkedin",
       "label": "LinkedIn",
-      "href": "https://linkedin.com/in/markam"
+      "href": "#"
+    },
+    {
+      "type": "website",
+      "label": "Website",
+      "href": "#"
     }
+
   ],
   "contact_meta": {
-    "mobile": "+2347070705050",
+    "mobile": "+2348155685789",
     "location": "Abuja, Nigeria"
   },
 
